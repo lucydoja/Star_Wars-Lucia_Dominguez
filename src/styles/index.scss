@@ -1,3 +1,35 @@
-/* 
-    General Styles
-*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer  {
+ background-color: black;
+ color: white;
+ position: absolute;
+    bottom: 0;
+    width: 100%
+}
+
+nav {
+    background-color: black;
+}
+
+.cartas {
+    overflow-x: scroll;
+    
+    width: auto;
+   white-space:nowrap;
+    
+}
+
+.card {
+    width: 18rem;
+    
+    display: inline-block;
+}
+
+.titulo {
+    margin-left: 15vw;
+    font-weight: 1000;
+}
+

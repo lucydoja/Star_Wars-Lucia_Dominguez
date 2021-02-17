@@ -1,28 +1,49 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			favorites: [],
+			people: [],
+			planets: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+
+			loadPeople: () => {
+				fetch("https://www.swapi.tech/api/people/")
+					.then(res => res.json())
+					.then(data => {
+						let personas = getStore().people;
+						for (let i = 0; i < data.results.length; i++) {
+							fetch(data.results[i].url)
+								.then(res => res.json())
+								.then(dataProp => {
+									personas.push(dataProp.result.properties);
+									setStore({ people: [...personas] });
+								});
+						}
+					})
+					.catch(err => console.error(err));
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+
+			loadPlanets: () => {
+				fetch("https://www.swapi.tech/api/planets/")
+					.then(res => res.json())
+					.then(data => {
+						let planetas = getStore().planets;
+						for (let i = 0; i < data.results.length; i++) {
+							fetch(data.results[i].url)
+								.then(res => res.json())
+								.then(dataProp => {
+									planetas.push(dataProp.result.properties);
+									setStore({ planets: [...planetas] });
+								});
+						}
+					})
+					.catch(err => console.error(err));
+			}
+			/*
+            exampleFunction: () => {
+				getActions().changeColor(0, "green");
 			},
 			changeColor: (index, color) => {
 				//get the store
@@ -37,7 +58,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			}*/
 		}
 	};
 };
