@@ -1,20 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 
 export const Card = props => {
 	const { store, actions } = useContext(Context);
-	const [estado, setEstado] = useState(null);
-	store.favorites.map(item => {
-		/*
-		if (item === props.nombre) {
-			setEstado(true);
-		} else {
-			setEstado(false);
-        }
-        */
-	});
+
+	function favoritos(nombre) {
+		let existe = store.favorites.find(el => el === nombre);
+
+		if (existe != undefined) {
+			return true;
+		}
+	}
+
 	return (
 		<div className="card m-1">
 			<img
@@ -37,12 +36,20 @@ export const Card = props => {
 							Learn more
 						</span>
 					</Link>
-					{estado ? (
+					{store.favorites.length == 0 ? (
+						<i
+							className="far fa-heart fa-2x"
+							onClick={() => {
+								actions.addFavorites(props.nombre);
+								//setEstado(true);
+							}}
+						/>
+					) : favoritos(props.nombre) == true ? (
 						<i
 							className="fas fa-heart fa-2x"
 							onClick={() => {
 								actions.deleteFav(props.nombre);
-								setEstado(false);
+								//setEstado(false);
 							}}
 						/>
 					) : (
@@ -50,7 +57,7 @@ export const Card = props => {
 							className="far fa-heart fa-2x"
 							onClick={() => {
 								actions.addFavorites(props.nombre);
-								setEstado(true);
+								//setEstado(true);
 							}}
 						/>
 					)}
