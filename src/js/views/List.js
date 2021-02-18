@@ -21,7 +21,7 @@ export const List = () => {
 					Go to home
 				</span>
 			</Link>
-			<h2 className="titulo2 mt-3">List of favorites</h2>
+			<h2 className="titulo2">List of favorites</h2>
 
 			{store.favorites.length == 0 ? (
 				<div>
