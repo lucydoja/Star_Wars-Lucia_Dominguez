@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Context } from "../store/appContext";
 
 export const Card = props => {
+	const { store, actions } = useContext(Context);
+	const [estado, setEstado] = useState(null);
+	store.favorites.map(item => {
+		/*
+		if (item === props.nombre) {
+			setEstado(true);
+		} else {
+			setEstado(false);
+        }
+        */
+	});
 	return (
 		<div className="card m-1">
 			<img
@@ -19,11 +31,30 @@ export const Card = props => {
 					<br />
 					{props.var3}
 				</p>
-				<Link to={"/info/" + props.nombre}>
-					<span className="btn btn-outline-dark" href="#" role="button">
-						Learn more
-					</span>
-				</Link>
+				<div className="d-flex flex-row justify-content-between">
+					<Link to={"/info/" + props.nombre}>
+						<span className="btn btn-outline-dark" href="#" role="button">
+							Learn more
+						</span>
+					</Link>
+					{estado ? (
+						<i
+							className="fas fa-heart fa-2x"
+							onClick={() => {
+								actions.deleteFav(props.nombre);
+								setEstado(false);
+							}}
+						/>
+					) : (
+						<i
+							className="far fa-heart fa-2x"
+							onClick={() => {
+								actions.addFavorites(props.nombre);
+								setEstado(true);
+							}}
+						/>
+					)}
+				</div>
 			</div>
 		</div>
 	);

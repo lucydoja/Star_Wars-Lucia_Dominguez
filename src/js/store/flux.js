@@ -40,25 +40,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					})
 					.catch(err => console.error(err));
-			}
-			/*
-            exampleFunction: () => {
-				getActions().changeColor(0, "green");
 			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+			addFavorites: variable => {
+				let favoritos = getStore().favorites;
+				favoritos.push(variable);
+				setStore({ favorites: [...favoritos] });
+			},
 
-				//reset the global store
-				setStore({ demo: demo });
-			}*/
+			deleteFav: variable => {
+				let favoritos = getStore().favorites;
+				let borrar = favoritos.find(el => el === variable);
+				let index = favoritos.indexOf(borrar);
+				favoritos.splice(index, 1);
+				setStore({ favorites: [...favoritos] });
+			}
 		}
 	};
 };

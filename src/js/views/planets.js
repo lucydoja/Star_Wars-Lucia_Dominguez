@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Card } from "../component/card";
 
@@ -6,7 +6,7 @@ export const Planets = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="cartas container mb-2">
+		<div className="cartas container planetas">
 			{store.planets.map((item, index) => {
 				return (
 					<Card

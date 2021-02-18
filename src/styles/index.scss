@@ -6,8 +6,9 @@ footer  {
  background-color: black;
  color: white;
  position: absolute;
-    bottom: 0;
-    width: 100%
+  bottom: 0;
+  width: 100%;
+
 }
 
 nav {
@@ -16,20 +17,54 @@ nav {
 
 .cartas {
     overflow-x: scroll;
-    
     width: auto;
-   white-space:nowrap;
+    white-space:nowrap;
     
 }
 
 .card {
     width: 18rem;
-    
+    text-align: justify;
     display: inline-block;
+    
+}
+
+.card-text{
+    text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
 }
 
 .titulo {
     margin-left: 15vw;
     font-weight: 1000;
+}
+
+#texto {
+  text-align: justify;
+  
+  
+}
+
+#propiedades{
+    border-top: 2px solid red;
+    color: red;
+    height: 100px;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.contenedor{
+    position: relative;
+     min-height: 100vh;
+}
+
+.planetas{
+    margin-bottom: 100px;
+}
+
+.far, .fas{
+    cursor: pointer;
 }
 
