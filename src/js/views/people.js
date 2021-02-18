@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Card } from "../component/card";
 
 export const People = () => {
-	const { store, actions } = useContext(Context);
+	const { store } = useContext(Context);
 
 	return (
 		<div className="cartas container mb-2">

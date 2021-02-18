@@ -44,7 +44,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			addFavorites: variable => {
 				let favoritos = getStore().favorites;
-				favoritos.push(variable);
+				favoritos = favoritos.concat(variable);
 				setStore({ favorites: [...favoritos] });
 			},
 

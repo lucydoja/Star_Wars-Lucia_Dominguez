@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
@@ -41,15 +41,13 @@ export const Card = props => {
 							className="far fa-heart fa-2x"
 							onClick={() => {
 								actions.addFavorites(props.nombre);
-								//setEstado(true);
 							}}
 						/>
-					) : favoritos(props.nombre) == true ? (
+					) : favoritos(props.nombre) ? (
 						<i
 							className="fas fa-heart fa-2x"
 							onClick={() => {
 								actions.deleteFav(props.nombre);
-								//setEstado(false);
 							}}
 						/>
 					) : (
@@ -57,7 +55,6 @@ export const Card = props => {
 							className="far fa-heart fa-2x"
 							onClick={() => {
 								actions.addFavorites(props.nombre);
-								//setEstado(true);
 							}}
 						/>
 					)}

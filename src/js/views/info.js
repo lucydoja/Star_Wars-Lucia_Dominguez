@@ -15,7 +15,7 @@ export const Info = () => {
 				<div className="container mb-2 align-self-center">
 					<Link to="/">
 						<span className="btn btn-danger" href="#" role="button">
-							Go back
+							Go to home
 						</span>
 					</Link>
 					<div className="row">
