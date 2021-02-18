@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Card } from "../component/card";
 
 export const List = () => {
-	const { store } = useContext(Context);
+	const { store, actions } = useContext(Context);
 
 	function existente(nombre) {
 		let existe = store.favorites.find(el => el === nombre);
@@ -16,11 +16,22 @@ export const List = () => {
 
 	return (
 		<div className="container mb-2">
-			<Link to="/">
-				<span className="btn btn-danger" href="#" role="button">
-					Go to home
+			<div className="d-flex justify-content-between">
+				<Link to="/">
+					<span className="btn btn-danger" role="button">
+						Go to home
+					</span>
+				</Link>
+				<span
+					className="btn btn-dark"
+					role="button"
+					onClick={() => {
+						actions.deleteAll();
+					}}>
+					Delete all
 				</span>
-			</Link>
+			</div>
+
 			<h2 className="titulo2">List of favorites</h2>
 
 			{store.favorites.length == 0 ? (

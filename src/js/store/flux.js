@@ -54,6 +54,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let index = favoritos.indexOf(borrar);
 				favoritos.splice(index, 1);
 				setStore({ favorites: [...favoritos] });
+			},
+
+			deleteAll: () => {
+				setStore({ favorites: [] });
 			}
 		}
 	};
