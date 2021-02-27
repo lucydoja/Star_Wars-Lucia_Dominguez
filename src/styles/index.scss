@@ -22,19 +22,16 @@ nav {
 }
 
 .cartas {
-    overflow-x: hidden;
+    
     width: auto;
     white-space:nowrap;
-    
+    overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: black white;
     
 }
 
-.cartas:hover {
-  overflow-x: scroll;
-  scrollbar-width: thin;
-  scrollbar-color: black white;
-  
-}
+
 
 .cartas::-webkit-scrollbar {
   height: 12px;
