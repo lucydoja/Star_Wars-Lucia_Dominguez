@@ -23,7 +23,7 @@ export const List = () => {
 					</span>
 				</Link>
 				<span
-					className="btn btn-dark"
+					className="btn btn-outline-light"
 					role="button"
 					onClick={() => {
 						actions.deleteAll();

@@ -15,7 +15,7 @@ export const Card = props => {
 	}
 
 	return (
-		<div className="card m-1">
+		<div className="card m-2">
 			<img
 				className="card-img-top"
 				src="https://images.mediotiempo.com/Q3JLKOwPAZjcdK-6u406n-REY-g=/958x596/uploads/media/2020/02/19/star-wars-franquicias-cine-ciencia.jpg"
