@@ -64,6 +64,7 @@ export const List = () => {
 					})}
 				</div>
 			)}
+			<div className="posicionFooter" />
 		</div>
 	);
 };
