@@ -2,7 +2,7 @@
 
 This is a simple Star Wars blog where you will be able to add, delete and review your favorite planets and characters from the Star Wars world.
 
-This project is based primarily on **Java Script**, using **React** for the client-Side, **Flux** and **Context API** to organize the data distribution, **React Router Dom** to handle routing, for styling I implemented **Bootstrap** and **CSS**. The information is fetched from the SWAPI (https://www.swapi.tech/).
+This project is based primarily on **Java Script**, using **React** for the client-side, **Flux** and **Context API** to organize the data distribution, **React Router Dom** to handle routing, for styling I implemented **Bootstrap** and **CSS**. The information is fetched from the SWAPI (https://www.swapi.tech/).
 
 
 ### View
