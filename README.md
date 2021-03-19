@@ -6,7 +6,7 @@ This project is based primarily on **Java Script**, using **React** for the clie
 
 
 ### View
-You can view this project in the following  link ( https://lucydoja.github.io/Star_Wars-Lucia_Dominguez/) and explore for yourself. 
+You can view this project in the following  link (https://lucydoja.github.io/Star_Wars-Lucia_Dominguez/) and explore for yourself. 
 
 If you want to run the project over Gitpod your will have to run the following on your command line:
 ```
